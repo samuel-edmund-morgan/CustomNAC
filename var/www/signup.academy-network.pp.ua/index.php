@@ -5,6 +5,7 @@
   <title>Академія СБУ: Реєстрація в системі</title>
   <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="assets/css/bootstrap.css">
+  <link rel="stylesheet" href="assets/css/academy.css">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body onload="  ">

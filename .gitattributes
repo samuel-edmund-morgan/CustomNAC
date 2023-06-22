@@ -2,3 +2,4 @@ etc/* linguist-vendored=false
 usr/* linguist-vendored=false
 var/* linguist-vendored=false
 var/www/signup.academy-network.pp.ua/assets/css/bootstrap.css linguist-vendored=true
+var/www/signup.academy-network.pp.ua/assets/css/academy.css linguist-vendored=true

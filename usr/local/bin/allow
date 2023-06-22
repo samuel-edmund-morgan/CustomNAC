@@ -1,0 +1,9 @@
+#!/bin/bash
+WEBSITE=$(whiptail --inputbox "Введіть адресу сайту (без https:// та без www. Наприклад: work.ua або sub.youtube.com) :" 10 69 --ok-button "ДОДАТИ" --cancel-button "ВИХІД"  --title "Дозволити сайт" 3>&1 1>&2 2>&3)
+exitstatus=$?
+if [ $exitstatus = 0 ]; then
+    echo "$WEBSITE" > /etc/websites
+    echo "Вебсайт " $WEBSITE " додано до дозволених!"
+else
+    echo "Відміна!"
+fi

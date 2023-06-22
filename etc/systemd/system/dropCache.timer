@@ -1,0 +1,11 @@
+[Unit]
+Description=Timer for dropping VM cache
+Requires=dropCache.service
+
+[Timer]
+Unit=dropCache.service
+OnCalendar=*-*-* 04:00:00
+AccuracySec=1us
+
+[Install]
+WantedBy=timers.target

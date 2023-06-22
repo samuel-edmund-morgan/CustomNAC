@@ -1,0 +1,10 @@
+[Unit]
+Description=Drops VM cache
+Wants=dropCache.timer
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/dropCache.sh
+
+[Install]
+WantedBy=multi-user.target

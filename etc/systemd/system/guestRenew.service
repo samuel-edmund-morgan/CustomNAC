@@ -1,0 +1,10 @@
+[Unit]
+Description=Renews guest password everyday
+Wants=guestRenew.timer
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/generateGuestPassword.sh
+
+[Install]
+WantedBy=multi-user.target

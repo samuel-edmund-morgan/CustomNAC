@@ -1,0 +1,164 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Академія СБУ: Вхід в систему</title>
+  <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="assets/css/bootstrap.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body onload="  ">
+<script>
+	setInterval(refreshURL, 120000);
+        // https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams
+        //grab params from query string
+        const urlParams = new URLSearchParams(window.location.search);
+        const postParam = urlParams.get('post');
+        const magicParam = urlParams.get('magic');
+	const loginParam = urlParams.get('login');
+        const usermacParam = urlParams.get('usermac');
+	const apmacParam = urlParams.get('apmac');
+        const apipParam = urlParams.get('apip');
+	const useripParam = urlParams.get('userip');
+        const ssidParam = urlParams.get('ssid');
+	const apnameParam = urlParams.get('apname');
+        const bssidParam = urlParams.get('bssid');
+
+	const auth = urlParams.get('Auth');
+
+
+        window.onload = function() {
+                // set action URL
+        document.authlogin.action = get_action();
+                // put post URL into callback URL box
+                document.getElementById("callbackurl").value = postParam;
+                document.getElementById("magic").value = magicParam;
+		document.getElementById("login").value = loginParam;
+		document.getElementById("usermac").value = usermacParam;
+		document.getElementById("apmac").value = apmacParam;
+		document.getElementById("apip").value = apipParam;
+		document.getElementById("userip").value = useripParam;
+		document.getElementById("ssid").value = ssidParam;
+		document.getElementById("apname").value = apnameParam;
+		document.getElementById("bssid").value = bssidParam;
+	
+		
+
+
+		if(auth == 'Failed'){
+			window.open("https://signup.academy-network.pp.ua/failed.html","_self");
+		} else {
+
+			localStorage.setItem('magicFromLocalStorage', magicParam);
+			localStorage.setItem('loginFromLocalStorage', loginParam);
+			localStorage.setItem('ipFromLocalStorage', useripParam);
+			localStorage.setItem('macFromLocalStorage', usermacParam);
+		}
+    }
+    function refreshURL() {
+         location.href = "http://gstatic.com/generate_204";
+    }
+
+    function setLocalStorageName(){
+	var inputUsername = document.getElementById("usernameForCookies");
+	document.cookie = "username=HELLO!; SameSite=None; Secure";
+        localStorage.setItem('usernameFromLocalStorage', inputUsername.value);
+    }	
+    function get_action() {
+        return postParam;
+    }
+</script>
+
+  <div class="screen_size" style="position:fixed; display:none;   z-index:1; padding:5px;">
+			<div class="visible-xs">XS</div>
+			<div class="visible-sm">SM</div>
+			<div class="visible-md">MD</div>
+			<div class="visible-lg">LG</div>
+  </div>
+  <img style="display:none;" src="/assets/logo.png" alt="Національна академія Служби Безпеки України logo">
+  <div style="width:100%;">
+  	<div class="head">
+		<div class "page" style=" padding:0px 0px 0px;">
+			<div class="head_content ">
+				<div class="head_content_text col-lg-5 col-md-6 col-sm-8 col-xs-8"> 
+					<a href="/" class=""><img src="assets/logo.png" class="logo" alt="Національна академія Служби Безпеки України logo"></a>
+					<div class="spacer visible-md"></div>   
+					<div class="spacer hidden-xs"></div>   
+					<div class="spacer_half hidden-xs hidden-sm"></div>   
+					<h2 class="hidden-xs hidden-sm" style="cursor:pointer;" onclick="document.location.href=&quot;//&quot;">Національна академія Служби Безпеки України</h2>  
+				</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+		<div class="clear visible-xs"></div>
+		<div class="clear"></div>
+	</div>
+                   
+<div class="menu  " style="padding:0px;">
+<div class="page">
+<div class="menu_content">
+<div class="hidden-xs hidden-sm">
+<ul class="menu_desktop ">
+
+
+<li><a href="http://gstatic.com/generate_204">Вхід<svg class="head-navigation-arrow" aria-hidden="true" viewBox="0 0 6 3">
+</svg></a></li>
+
+
+<li><a href="index.php" onclick="location.href=this.href+'?login&post='+postParam+'&magic='+magicParam;return false;">Реєстрація<svg class="head-navigation-arrow" aria-hidden="true" viewBox="0 0 6 3">
+</svg></a></li>
+
+</ul> 
+</div>
+</div>
+</div>
+</div>
+
+
+                   
+  <div class="containerForm mt-5">
+    <h2 class="text-center mb-4">Вхід в мережу Академії</h2>
+
+    <form action="" accept-charset="UTF-8" method="post" name="authlogin">
+    <input type="hidden" name="login" id="login" readonly>
+    <input type="hidden" name="post" id="callbackurl" readonly>
+    <input type="hidden" name="magic" id="magic" readonly>
+    <input type="hidden" name="usermac" id="usermac" readonly>
+    <input type="hidden" name="apmac" id="apmac" readonly>
+    <input type="hidden" name="apip" id="apip" readonly>
+    <input type="hidden" name="userip" id="userip" readonly>
+    <input type="hidden" name="ssid" id="ssid" readonly>
+    <input type="hidden" name="apname" id="apname" readonly>
+    <input type="hidden" name="bssid" id="bssid" readonly>
+    
+      <div class="form-group row">
+        <label class="col-sm-4 col-form-label"><b>Ім'я входу</b></label>
+        <div class="col-sm-8">
+          <input type="text" name="username" class="form-control" id="usernameForCookies" placeholder="moscalyaku_na_gillyaku">
+        </div>
+      </div> 
+
+
+      <div class="form-group row">
+        <label class="col-sm-4 col-form-label"><b>Пароль</b></label>
+        <div class="col-sm-8">
+          <input type="password" name="password" class="form-control"  placeholder="1488bAnderivEts69">
+        </div>
+      </div> 
+
+
+
+
+      <div class="form-group row">
+        <div class="col-sm-12 mt-3">
+          <button type="submit" name="submit" value="OK" onclick="setLocalStorageName()" class="btn btn_color btn-primary btn-block">Вхід в мережу</button>
+        </div>
+      </div>
+
+
+
+    </form>
+  </div>
+  
+</body>
+</html>

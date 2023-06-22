@@ -1,0 +1,13 @@
+#!/bin/bash
+token_file="/etc/fortitokens"
+token=$(tr -dc A-HJKMNP-Za-hjkmnp-z1-9 </dev/urandom | head -c 16 ; echo '')
+printf "${token:0:4}-${token:4:4}-${token:8:4}-${token:12:4}\n" > "$token_file"
+
+for i in {1..299}
+ do
+	token=$(tr -dc A-HJKMNP-Za-hjkmnp-z1-9 </dev/urandom | head -c 16 ; echo '')
+	printf "${token:0:4}-${token:4:4}-${token:8:4}-${token:12:4}\n" >> "$token_file"
+ done
+
+#send tokens to email
+php /usr/local/bin/sendTokens.php

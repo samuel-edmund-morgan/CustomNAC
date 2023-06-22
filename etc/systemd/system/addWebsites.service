@@ -1,0 +1,7 @@
+[Unit]
+Description=Monitors changes of file /etc/websites
+After=network.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/python3 /usr/local/bin/addWebsites.py

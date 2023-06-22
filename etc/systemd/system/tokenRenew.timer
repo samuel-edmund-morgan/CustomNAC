@@ -1,0 +1,11 @@
+[Unit]
+Description=Timer for tokens renewal
+Requires=tokenRenew.service
+
+[Timer]
+Unit=tokenRenew.service
+OnCalendar=*-*-01 07:00:00
+AccuracySec=1us
+
+[Install]
+WantedBy=timers.target

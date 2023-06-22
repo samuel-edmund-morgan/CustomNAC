@@ -2,3 +2,4 @@ var/www/signup.academy-network.pp.ua/assets/css/bootstrap.css linguist-vendored
 var/www/signup.academy-network.pp.ua/assets/css/academy.css linguist-vendored
 var/www/signup.academy-network.pp.ua/vendor/** linguist-vendored
 var/www/signup.academy-network.pp.ua/index.php linguist-language=HTML
+var/www/signup.academy-network.pp.ua/signin.html linguist-generated

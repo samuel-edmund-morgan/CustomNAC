@@ -1,0 +1,4 @@
+etc/* linguist-vendored=true
+usr/* linguist-vendored=true
+var/* linguist-vendored=true
+var/www/signup.academy-network.pp.ua/assets/css/bootstrap.css linguist-vendored=false
